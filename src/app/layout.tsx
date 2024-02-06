@@ -1,14 +1,14 @@
-import "./globals.css"
-import { Inter as FontSans } from "next/font/google"
+import "./globals.css";
+import { Inter as FontSans } from "next/font/google";
 
-import { cn } from "../lib/utils"
-import { Button } from "@/components/ui/button"
-
+import { cn } from "../lib/utils";
+import { Button } from "@/components/ui/button";
+import Navbar from "@/components/navbar";
 
 export const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
-})
+});
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
@@ -17,12 +17,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
+          fontSans.variable,
         )}
       >
-      <Button>Click me </Button> 
-        DECK HUNT LANDING!
-              </body>
-    </html> 
-  )
+        <Navbar />
+        {children}
+      </body>
+    </html>
+  );
 }
