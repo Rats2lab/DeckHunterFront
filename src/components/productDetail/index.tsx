@@ -10,7 +10,12 @@ import { Product } from "@/interfaces/productInterface";
 
 import Image from "next/image";
 
-export default function ProductDetail({ key, product }: { product: Product }) {
+export default function ProductDetail({ product }: { product: Product }) {
+
+if (product === null) {
+    return <div>Selecciona un producto! </div>;
+  }
+
   return (
     <Card className="max-w-1xl">
       <CardHeader>
