@@ -12,7 +12,7 @@ import Image from "next/image";
 
 export default function ProductCard({ key, product }: { product: Product }) {
   return (
-    <Card>
+    <Card className="hover:cursor-pointer hover:scale-110">
       <CardHeader>
         <CardTitle>{product.name}</CardTitle>
         <CardDescription>{product.description}</CardDescription>
