@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Product } from "@/interfaces/productInterface";
 import ProductCard from "@/components/productListCard";
 import { fakeProducts } from "@/lib/utils";
-import {ScrollArea} from "@/components/ui/scroll-area";
+import {ScrollArea, ScrollBar} from "@/components/ui/scroll-area";
 
 
 export default function ProductList({ products, onProductSelect }) {
@@ -14,12 +14,15 @@ export default function ProductList({ products, onProductSelect }) {
     return <div>No hay productos disponibles.</div>;
   }
   return (
-    <ScrollArea className="max-w-1xl items-center justify-between font-mono text-sm">
+    <ScrollArea className="lg:w-1/4 flex flex-row font-mono text-sm pt-1">
+      <div className="flex lg:flex-col w-max space-x-4 p-4">
       {products.map((product) => (
-        <div onClick={() => handleProductClick(product)}>
-          <ProductCard key={product.id} product={product} />
+        <div className="mt-1" key={product.id} onClick={() => handleProductClick(product)}>
+          <ProductCard product={product} />
         </div>
       ))}
+      </div>
+       <ScrollBar className="lg:hidden" orientation="horizontal" />
     </ScrollArea>
   );
 }

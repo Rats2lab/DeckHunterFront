@@ -4,6 +4,7 @@ import Image from "next/image";
 import ProductList from "@/components/productList";
 import ProductDetail from "@/components/productDetail";
 import { fakeProducts } from "@/lib/utils";
+// import styles from "@/app/globals.css";
 import React, { useState, useEffect } from "react";
 // import { Product } from '@/interfaces/productInterface';
 
@@ -29,7 +30,7 @@ export default function Home() {
   };
 
   return (
-    <main className="flex p-6 max-h-96">
+    <main>
       <ProductList products={products} onProductSelect={handleProductSelect} />
       <ProductDetail product={selectedProduct} />
     </main>

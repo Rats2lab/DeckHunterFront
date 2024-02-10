@@ -17,7 +17,7 @@ if (product === null) {
   }
 
   return (
-    <Card className="max-w-1xl">
+    <Card className="lg:w-3/4 mt-1">
       <CardHeader>
         <CardTitle>DETALLE PRODUCTO: {product.name}</CardTitle>
         <CardDescription>{product.description}</CardDescription>
