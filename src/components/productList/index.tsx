@@ -17,7 +17,7 @@ export default function ProductList({ products, onProductSelect }) {
     <ScrollArea className="lg:w-1/4 flex flex-row font-mono text-sm pt-1">
       <div className="flex lg:flex-col w-max space-x-4 p-4">
       {products.map((product) => (
-        <div className="mt-1" key={product.id} onClick={() => handleProductClick(product)}>
+        <div className="mt-1 max-w-52" key={product.id} onClick={() => handleProductClick(product)}>
           <ProductCard product={product} />
         </div>
       ))}

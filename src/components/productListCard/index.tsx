@@ -13,14 +13,11 @@ import Image from "next/image";
 export default function ProductCard({ key, product }: { product: Product }) {
   return (
     <Card className="hover:cursor-pointer hover:scale-110">
-      <CardHeader>
-        <CardTitle>{product.name}</CardTitle>
-        <CardDescription>{product.description}</CardDescription>
+      <CardHeader className="p-2">
+        <CardTitle className="text-sm">{product.title}</CardTitle>
+        <CardDescription className="text-xs line-clamp-4">{product.description}</CardDescription>
       </CardHeader>
-      <CardContent>
-        <p>Card Content</p>
-      </CardContent>
-      <CardFooter>
+      <CardFooter className="text-xs">
         <p>Votos: {product.votes}</p>
       </CardFooter>
     </Card>

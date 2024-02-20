@@ -12,14 +12,14 @@ import Image from "next/image";
 
 export default function ProductDetail({ product }: { product: Product }) {
 
-if (product === null) {
+if (product === undefined) {
     return <div>Selecciona un producto! </div>;
   }
 
   return (
     <Card className="lg:w-3/4 mt-1">
       <CardHeader>
-        <CardTitle>DETALLE PRODUCTO: {product.name}</CardTitle>
+        <CardTitle>{product.title}</CardTitle>
         <CardDescription>{product.description}</CardDescription>
       </CardHeader>
       <CardContent>

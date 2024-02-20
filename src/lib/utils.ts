@@ -35,7 +35,7 @@ const numProducts = 10; // Cambia este valor según la cantidad deseada de produ
 for (let i = 1; i <= numProducts; i++) {
   fakeProducts.push({
     id: i,
-    name: `Producto ${i}`,
+    title: `Producto ${i}`,
     description: `Descripción del producto ${i}`,
     votes: Math.floor(Math.random() * 1000), // Generar un número de votos aleatorio
   });

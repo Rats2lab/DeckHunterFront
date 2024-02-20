@@ -10,14 +10,35 @@ import React, { useState, useEffect } from "react";
 
 export default function Home() {
   //Fetching products
-  const [products, setProducts] = useState<Product[]>(fakeProducts);
+
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     // Realizar la solicitud de fetch para obtener los datos de los productos
-    // fetch("https://api.example.com/products")
-    //   .then((response) => response.json())
-    //   .then((data) => setProducts(data))
-    //   .catch((error) => console.error("Error fetching products:", error));
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_BASE_URL}/product`,
+        );
+        if (!response.ok) {
+          throw new Error("Error al obtener los productos");
+        }
+        const data = await response.json();
+        setProducts(data);
+        setSelectedProduct(data[0]);
+        console.log(data);
+
+
+        setLoading(false);
+      } catch (error) {
+        setError(error.message);
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
   }, []);
 
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(
@@ -31,8 +52,19 @@ export default function Home() {
 
   return (
     <main>
-      <ProductList products={products} onProductSelect={handleProductSelect} />
-      <ProductDetail product={selectedProduct} />
+      {loading ? (
+        <div>Cargando...</div>
+      ) : error ? (
+        <div>Error: {error}</div>
+      ) : (
+        <>
+          <ProductList
+            products={products}
+            onProductSelect={handleProductSelect}
+          />
+          <ProductDetail product={selectedProduct} />
+        </>
+      )}
     </main>
   );
 }
