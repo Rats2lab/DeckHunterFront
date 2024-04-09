@@ -7,7 +7,7 @@ import ProductCard from "../productListCard";
 
 export default function ProductList({ products, onProductSelect }) {
   const handleProductClick = (product: Product) => {
-    onProductSelect(product);
+  onProductSelect(product);
   };
 
   if (!Array.isArray(products)) {

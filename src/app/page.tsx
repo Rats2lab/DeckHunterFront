@@ -20,7 +20,7 @@ export default function Home() {
     const fetchProducts = async () => {
       try {
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_BASE_URL}/product`,
+          `${process.env.NEXT_PUBLIC_BASE_URL}/product`
         );
         if (!response.ok) {
           throw new Error("Error al obtener los productos");
@@ -33,7 +33,10 @@ export default function Home() {
 
         setLoading(false);
       } catch (error) {
-        setError(error.message);
+        //setError(error.message);
+        // Getting fake products
+        setProducts(fakeProducts);
+        setSelectedProduct(fakeProducts[0]);
         setLoading(false);
       }
     };
@@ -42,7 +45,7 @@ export default function Home() {
   }, []);
 
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(
-    products[0],
+    products[0]
   );
 
   // Función para manejar la selección de un producto en ProductList
@@ -55,7 +58,10 @@ export default function Home() {
       {loading ? (
         <div>Cargando...</div>
       ) : error ? (
-        <div>Error: {error}</div>
+        <div>
+          <h2> Oops... algo ha ido mal 🥺</h2>
+          <p>Error: {error} </p>
+        </div>
       ) : (
         <>
           <ProductList
