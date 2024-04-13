@@ -1,3 +1,4 @@
+import { Product } from "@/interfaces/product.interface";
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -17,8 +18,8 @@ export const fakeProducts: Product[] = [
     title: "Test product",
     description:
       "LA PETICIÓN A BACK NO HA FUNCIONADO, MOSTRAMOS LISTADO DE PRODUCTOS FALSOS. Habit Tracker aims to be an easy-to-use app iOS, macOS and watchOS without a lot of frills. It has the essential information you need to track your progress and reach your goals. In just a few steps it allows you to create a new habit and mark your progress.",
-    launchDate: "2024-02-16T00:00:00.000Z",
-    votes: "19",
+    launchDate: new Date("2024-02-16T00:00:00.000Z"),
+    votes: 19,
     country: "TBD",
   },
   {
@@ -31,8 +32,8 @@ export const fakeProducts: Product[] = [
     title: "Test product 2",
     description:
       "Spokk is a social platform that you can use to get your ideas, prototypes & creations validated from anyone you want through anonymous opinions. Unlike other tools, it gives you complete control over the anonymous data you receive. People can also build on each other’s opinions to reach an optimal solution. (Hint - Validate your startup or idea)",
-    launchDate: "2024-02-16T00:00:00.000Z",
-    votes: "23",
+    launchDate: new Date("2024-02-16T00:00:00.000Z"),
+    votes: 23,
     country: "TBD",
   },
   {
@@ -45,8 +46,8 @@ export const fakeProducts: Product[] = [
     title: "Product Test",
     description:
       "GSC Agent, the world's first privacy-first, locally-run index tool, offers secure, fast indexing without subscriptions. Say goodbye to data leaks and hello to lifetime SEO empowerment.",
-    launchDate: "2024-02-16T00:00:00.000Z",
-    votes: "43",
+    launchDate: new Date("2024-02-16T00:00:00.000Z"),
+    votes: 43,
     country: "TBD",
   },
   {
@@ -59,8 +60,8 @@ export const fakeProducts: Product[] = [
     title: "Product Test 2",
     description:
       "Meet the all-in-one workspace your productive teams deserve to have!\n\nKlever Suite brings all your work - projects, tasks, and Wiki docs in one place - so you can focus on being more productive!\n\nHere’s what you can do with Klever Suite 👀\n🏃‍♂️ Run projects of any size with our flexible Kanban board\n📑 Create all kinds of Wiki docs+ diagrams, from product requirement docs to flowcharts\n📌 Organize all tasks you’re working on",
-    launchDate: "2024-02-15T00:00:00.000Z",
-    votes: "568",
+    launchDate: new Date("2024-02-15T00:00:00.000Z"),
+    votes: 568,
     country: "TBD",
   },
   {
@@ -73,8 +74,8 @@ export const fakeProducts: Product[] = [
     title: "Product Test 3",
     description:
       "Reiki is where creator economy meets AI and blockchain. Turn your creativity into profits with Reiki's AI creation toolkits, on-chain ownership proof, AI agents marketplace, and a thriving community of over 88K members.",
-    launchDate: "2024-01-06T00:00:00.000Z",
-    votes: "3805",
+    launchDate: new Date("2024-01-06T00:00:00.000Z"),
+    votes: 3805,
     country: "TBD",
   },
   {
@@ -87,8 +88,8 @@ export const fakeProducts: Product[] = [
     title: "Test Product 3",
     description:
       "Manage your calendar bookings easier with TidyCal — the ideal for scheduling meetings across time zones. With a Free plan or Lifetime deal, get unlimited booking types, easy integrations with your calendars, Zoom, and Google Meet, paid booking integration with Stripe and PayPal... and advanced features like Zapier and API. TidyCal simplifies meeting scheduling with a beautiful, simple interface — with no app download required — both desktop and mobile web.",
-    launchDate: "2024-01-18T00:00:00.000Z",
-    votes: "2557",
+    launchDate: new Date("2024-01-18T00:00:00.000Z"),
+    votes: 2557,
     country: "TBD",
   },
 ];

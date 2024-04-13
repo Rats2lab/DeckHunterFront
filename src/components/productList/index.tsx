@@ -1,13 +1,13 @@
 import Image from "next/image";
-import { Product } from "@/interfaces/productInterface";
 //import ProductCard from "@/components/productListCard";
 import { fakeProducts } from "@/lib/utils";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import ProductCard from "../productListCard";
+import { Product } from "@/interfaces/product.interface";
 
-export default function ProductList({ products, onProductSelect }) {
+export default function ProductList({ products, onProductSelect }: any) {
   const handleProductClick = (product: Product) => {
-  onProductSelect(product);
+    onProductSelect(product);
   };
 
   if (!Array.isArray(products)) {
@@ -22,7 +22,7 @@ export default function ProductList({ products, onProductSelect }) {
             key={product.id}
             onClick={() => handleProductClick(product)}
           >
-            <ProductCard product={product} />
+            <ProductCard key={product.id} product={product} />
           </div>
         ))}
       </div>

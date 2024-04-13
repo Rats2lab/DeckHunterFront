@@ -6,11 +6,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Product } from "@/interfaces/productInterface";
+import { Product } from "@/interfaces/product.interface";
 
 import Image from "next/image";
 
-export default function ProductCard({ key, product }: { product: Product }) {
+export default function ProductCard({ key, product }: { key:string,  product: Product }) {
   return (
     <Card className="hover:cursor-pointer hover:scale-110">
       <CardHeader className="p-2">

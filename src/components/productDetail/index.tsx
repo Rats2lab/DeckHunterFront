@@ -6,13 +6,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Product } from "@/interfaces/productInterface";
+import { Product } from "@/interfaces/product.interface";
 
 import Image from "next/image";
 
-export default function ProductDetail({ product }: { product: Product }) {
+export default function ProductDetail({ product }: { product: Product | null }) {
 
-if (product === undefined) {
+if (!product) {
     return <div>Selecciona un producto! </div>;
   }
 

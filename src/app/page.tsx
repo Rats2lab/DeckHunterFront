@@ -4,9 +4,8 @@ import Image from "next/image";
 import ProductList from "@/components/productList";
 import ProductDetail from "@/components/productDetail";
 import { fakeProducts } from "@/lib/utils";
-// import styles from "@/app/globals.css";
 import React, { useState, useEffect } from "react";
-// import { Product } from '@/interfaces/productInterface';
+import { Product } from "@/interfaces/product.interface";
 
 export default function Home() {
   //Fetching products
@@ -37,6 +36,7 @@ export default function Home() {
         // Getting fake products
         setProducts(fakeProducts);
         setSelectedProduct(fakeProducts[0]);
+        console.log(fakeProducts);
         setLoading(false);
       }
     };
