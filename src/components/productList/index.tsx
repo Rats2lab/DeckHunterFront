@@ -14,19 +14,15 @@ export default function ProductList({ products, onProductSelect }: any) {
     return <div>No hay productos disponibles.</div>;
   }
   return (
-    <ScrollArea className="lg:w-1/4 flex flex-row font-mono text-sm pt-1">
-      <div className="flex lg:flex-col w-max space-x-4 p-4">
-        {products.map((product) => (
-          <div
-            className="mt-1 max-w-52"
-            key={product.id}
-            onClick={() => handleProductClick(product)}
-          >
-            <ProductCard key={product.id} product={product} />
-          </div>
-        ))}
-      </div>
-      <ScrollBar className="lg:hidden" orientation="horizontal" />
-    </ScrollArea>
+    <div className="overflow-auto flex h-full w-72 flex-none flex-col items-start gap-4 rounded bg-neutral-50 pt-1 pr-1 pb-1 pl-1">
+      {products.map((product) => (
+        <div
+          key={product.id}
+          onClick={() => handleProductClick(product)}
+        >
+          <ProductCard key={product.id} product={product} />
+        </div>
+      ))}
+    </div>
   );
 }

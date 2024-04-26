@@ -1,9 +1,7 @@
 import "./globals.css";
-import { Inter as FontSans } from "next/font/google";
 
-import { cn } from "../lib/utils";
 import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
+import { cn } from "../lib/utils";
 /* 
 export const fontSans = FontSans({
   subsets: ["latin"],
@@ -13,7 +11,11 @@ export const fontSans = FontSans({
 export default function RootLayout({ children }: any) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head />
+      <head>
+      <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+      </head>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased h-96",
@@ -22,7 +24,6 @@ export default function RootLayout({ children }: any) {
       >
         <Navbar />
         {children}
-        <Footer />
       </body>
     </html>
   );

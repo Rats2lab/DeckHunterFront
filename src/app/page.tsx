@@ -54,7 +54,7 @@ export default function Home() {
   };
 
   return (
-    <main>
+    <main className="h-screen p-1">
       {loading ? (
         <div>Cargando...</div>
       ) : error ? (
@@ -63,13 +63,13 @@ export default function Home() {
           <p>Error: {error} </p>
         </div>
       ) : (
-        <>
-          <ProductList
+        <div className="flex h-full w-full grow shrink-0 basis-0 items-start gap-4 bg-default-background pt-6 pr-6 pb-6 pl-6">
+        <ProductList
             products={products}
             onProductSelect={handleProductSelect}
           />
           <ProductDetail product={selectedProduct} />
-        </>
+        </div>
       )}
     </main>
   );

@@ -3,8 +3,10 @@ const { fontFamily } = require("tailwindcss/defaultTheme")
 
 
 const config = {
+  presets: [require("./src/subframe/tailwind.config.js")],
   darkMode: ["class"],
   content: [
+    "./src/subframe/**/*.{js,ts,jsx,tsx}",
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
