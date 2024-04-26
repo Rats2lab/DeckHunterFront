@@ -1,9 +1,7 @@
 "use client";
 
-import React from "react";
-import * as SubframeCore from "@subframe/core";
 import { Badge, Button, DropdownMenu, TextField } from "@/subframe";
-// import { DropdownMenu } from "@/subframe/components/DropdownMenu";
+import * as SubframeCore from "@subframe/core";
 
 const Navbar = () => {
   return (

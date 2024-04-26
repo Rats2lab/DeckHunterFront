@@ -1,9 +1,6 @@
-import Image from "next/image";
 //import ProductCard from "@/components/productListCard";
-import { fakeProducts } from "@/lib/utils";
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
-import ProductCard from "../productListCard";
 import { Product } from "@/interfaces/product.interface";
+import ProductCard from "../productListCard";
 
 export default function ProductList({ products, onProductSelect }: any) {
   const handleProductClick = (product: Product) => {

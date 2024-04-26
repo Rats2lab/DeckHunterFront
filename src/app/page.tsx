@@ -1,11 +1,10 @@
 "use client";
 
-import Image from "next/image";
-import ProductList from "@/components/productList";
 import ProductDetail from "@/components/productDetail";
-import { fakeProducts } from "@/lib/utils";
-import React, { useState, useEffect } from "react";
+import ProductList from "@/components/productList";
 import { Product } from "@/interfaces/product.interface";
+import { fakeProducts } from "@/lib/utils";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   //Fetching products

@@ -2,11 +2,6 @@ import "./globals.css";
 
 import Navbar from "@/components/navbar";
 import { cn } from "../lib/utils";
-/* 
-export const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-}); */
 
 export default function RootLayout({ children }: any) {
   return (

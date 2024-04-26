@@ -1,15 +1,6 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Product } from "@/interfaces/product.interface";
 import { Avatar, Badge, KanbanColumn } from "@/subframe";
 
-import Image from "next/image";
 
 export default function ProductCard({
   key,
