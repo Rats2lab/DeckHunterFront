@@ -1,7 +1,6 @@
 import { Product } from "@/interfaces/product.interface";
 import { Avatar, Badge, KanbanColumn } from "@/subframe";
 
-
 export default function ProductCard({
   key,
   product,
@@ -30,7 +29,7 @@ export default function ProductCard({
           variant="neutral"
           icon="FeatherArrowUpSquare"
         >
-          {product.votes}
+          {product.votes.toString()}
         </Badge>
       </div>
     </KanbanColumn.KanbanCard>
