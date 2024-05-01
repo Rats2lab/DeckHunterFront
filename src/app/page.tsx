@@ -68,7 +68,7 @@ export default function Home() {
             className="w-48"
             />
             <Button size="small" onClick={() => {
-              let currentLocation = window.origin;   // get url of current page
+              let currentLocation = window.origin;   
               window.location.href = currentLocation 
             }}> Refresh page!</Button>
           </div>

@@ -2,6 +2,8 @@
 
 import { Badge, Button, DropdownMenu, TextField } from "@/subframe";
 import * as SubframeCore from "@subframe/core";
+import LenguageFilter from "./lenguageFilter";
+import DateFilter from "./filters/dateFilter";
 
 const Navbar = () => {
   return (
@@ -36,150 +38,11 @@ const Navbar = () => {
       </div>
       {/* Down navbar  */}
       <div className="flex w-full items-center gap-6 border-b border-solid border-neutral-border pt-2 pr-6 pb-2 pl-6">
-        <SubframeCore.DropdownMenu.Root>
-          <SubframeCore.DropdownMenu.Trigger asChild={true}>
-            <div className="flex items-start gap-1">
-              <SubframeCore.DropdownMenu.Root>
-                <SubframeCore.DropdownMenu.Trigger asChild={true}>
-                  <Button
-                    variant="neutral-tertiary"
-                    iconRight="FeatherChevronDown"
-                  >
-                    Ayer, jueves 17 de febrero
-                  </Button>
-                </SubframeCore.DropdownMenu.Trigger>
-                <SubframeCore.DropdownMenu.Portal>
-                  <SubframeCore.DropdownMenu.Content
-                    side="bottom"
-                    align="start"
-                    sideOffset={4}
-                    asChild={true}
-                  >
-                    <DropdownMenu>
-                      <DropdownMenu.DropdownItem icon="FeatherPlus">
-                        Add filter
-                      </DropdownMenu.DropdownItem>
-                    </DropdownMenu>
-                  </SubframeCore.DropdownMenu.Content>
-                </SubframeCore.DropdownMenu.Portal>
-              </SubframeCore.DropdownMenu.Root>
-              <SubframeCore.DropdownMenu.Root>
-                <SubframeCore.DropdownMenu.Trigger asChild={true}>
-                  <Button
-                    className="hidden"
-                    variant="neutral-tertiary"
-                    iconRight="FeatherChevronDown"
-                  >
-                    Group by
-                  </Button>
-                </SubframeCore.DropdownMenu.Trigger>
-                <SubframeCore.DropdownMenu.Portal>
-                  <SubframeCore.DropdownMenu.Content
-                    side="bottom"
-                    align="start"
-                    sideOffset={4}
-                    asChild={true}
-                  >
-                    <DropdownMenu>
-                      <DropdownMenu.DropdownItem icon="FeatherCircleDot">
-                        Status
-                      </DropdownMenu.DropdownItem>
-                      <DropdownMenu.DropdownItem icon="FeatherUser">
-                        Owner
-                      </DropdownMenu.DropdownItem>
-                      <DropdownMenu.DropdownItem icon="FeatherDollarSign">
-                        Amount
-                      </DropdownMenu.DropdownItem>
-                    </DropdownMenu>
-                  </SubframeCore.DropdownMenu.Content>
-                </SubframeCore.DropdownMenu.Portal>
-              </SubframeCore.DropdownMenu.Root>
-              <Button
-                className="hidden"
-                variant="neutral-tertiary"
-                icon="FeatherSettings2"
-              >
-                Customize
-              </Button>
-              <Button
-                className="hidden"
-                variant="neutral-tertiary"
-                icon="FeatherDownload"
-              >
-                Download
-              </Button>
-            </div>
-          </SubframeCore.DropdownMenu.Trigger>
-          <SubframeCore.DropdownMenu.Portal>
-            <SubframeCore.DropdownMenu.Content
-              side="bottom"
-              align="start"
-              sideOffset={4}
-              asChild={true}
-            >
-              <DropdownMenu>
-                <DropdownMenu.DropdownItem
-                  className="h-8 w-auto flex-none"
-                  icon={null}
-                >
-                  Miércoles 16 de febrero
-                </DropdownMenu.DropdownItem>
-                <DropdownMenu.DropdownItem
-                  className="h-8 w-auto flex-none"
-                  icon={null}
-                >
-                  Martes 15 de febrero
-                </DropdownMenu.DropdownItem>
-                <DropdownMenu.DropdownItem
-                  className="h-8 w-auto flex-none"
-                  icon={null}
-                >
-                  Lunes 14 de febrero
-                </DropdownMenu.DropdownItem>
-                <DropdownMenu.DropdownItem
-                  className="h-8 w-auto flex-none"
-                  icon={null}
-                >
-                  Domingo 13 de febrero
-                </DropdownMenu.DropdownItem>
-              </DropdownMenu>
-            </SubframeCore.DropdownMenu.Content>
-          </SubframeCore.DropdownMenu.Portal>
-        </SubframeCore.DropdownMenu.Root>
+          <DateFilter/>
         <div className="flex w-full grow shrink-0 basis-0 items-center justify-end gap-6">
-          <SubframeCore.DropdownMenu.Root>
-            <SubframeCore.DropdownMenu.Trigger asChild={true}>
-              <Button
-                variant="neutral-tertiary"
-                icon="FeatherFlag"
-                iconRight="FeatherChevronDown"
-              >
-                Lenguage
-              </Button>
-            </SubframeCore.DropdownMenu.Trigger>
-            <SubframeCore.DropdownMenu.Portal>
-              <SubframeCore.DropdownMenu.Content
-                side="bottom"
-                align="start"
-                sideOffset={4}
-                asChild={true}
-              >
-                <DropdownMenu>
-                  <DropdownMenu.DropdownItem icon="FeatherPlus">
-                    Español
-                  </DropdownMenu.DropdownItem>
-                  <DropdownMenu.DropdownItem icon="FeatherPlus">
-                    English
-                  </DropdownMenu.DropdownItem>
-                  <DropdownMenu.DropdownItem icon="FeatherPlus">
-                    Indioario
-                  </DropdownMenu.DropdownItem>
-                </DropdownMenu>
-              </SubframeCore.DropdownMenu.Content>
-            </SubframeCore.DropdownMenu.Portal>
-          </SubframeCore.DropdownMenu.Root>
+          <LenguageFilter/>
           <TextField variant="filled" label="" helpText="" icon="FeatherSearch">
-            <TextField.Input placeholder="Search" />
+            <TextField.Input placeholder="Searchbar not avialable :(" />
           </TextField>
         </div>
       </div>
