@@ -4,6 +4,8 @@ import ProductDetail from "@/components/productDetail";
 import ProductList from "@/components/productList";
 import { Product } from "@/interfaces/product.interface";
 import { fakeProducts } from "@/lib/utils";
+import { Alert, Button } from "@/subframe";
+import { Loader } from "@/subframe/components/Loader";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -27,7 +29,6 @@ export default function Home() {
         setProducts(data);
         setSelectedProduct(data[0]);
         console.log(data);
-
 
         setLoading(false);
       } catch (error) {
@@ -54,22 +55,33 @@ export default function Home() {
 
   return (
     <main className="h-screen p-1">
-      {loading ? (
-        <div>Cargando...</div>
-      ) : error ? (
-        <div>
-          <h2> Oops... algo ha ido mal 🥺</h2>
-          <p>Error: {error} </p>
-        </div>
-      ) : (
-        <div className="flex h-full w-full grow shrink-0 basis-0 items-start gap-4 bg-default-background pt-6 pr-6 pb-6 pl-6">
-        <ProductList
-            products={products}
-            onProductSelect={handleProductSelect}
-          />
-          <ProductDetail product={selectedProduct} />
-        </div>
-      )}
+      <div className="flex h-full w-full grow shrink-0 basis-0 items-start gap-4 bg-default-background pt-6 pr-6 pb-6 pl-6">
+        {loading ? (
+          <div className="h-full w-full flex justify-center content-center">
+            <Loader size="large" />
+          </div>
+        ) : error ? (
+          <div className="h-full w-full flex flex-col items-center justify-center space-y-4">
+            <Alert variant="error"
+            title="Oops... something went wrong 🥺"
+            description={""+error}
+            className="w-48"
+            />
+            <Button size="small" onClick={() => {
+              let currentLocation = window.origin;   // get url of current page
+              window.location.href = currentLocation 
+            }}> Refresh page!</Button>
+          </div>
+        ) : (
+          <>
+            <ProductList
+              products={products}
+              onProductSelect={handleProductSelect}
+            />
+            <ProductDetail product={selectedProduct} />
+          </>
+        )}
+      </div>
     </main>
   );
 }
