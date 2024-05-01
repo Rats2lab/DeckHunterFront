@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, DropdownMenu, TextField } from "@/subframe";
+import { Button, DropdownMenu } from "@/subframe";
 import * as SubframeCore from "@subframe/core";
 import { useState } from "react";
 

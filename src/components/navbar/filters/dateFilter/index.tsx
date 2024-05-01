@@ -9,7 +9,7 @@ const dateLocaleOptions = {
   year: "numeric",
   month: "long",
   day: "numeric",
-};
+} as const;
 const lastWeekDays: Date[] = [];
 
 for (let i = 1; i < 7; i++) {
