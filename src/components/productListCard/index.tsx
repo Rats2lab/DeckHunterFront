@@ -9,7 +9,7 @@ export default function ProductCard({
   product: Product;
 }) {
   return (
-    <KanbanColumn.KanbanCard>
+    <KanbanColumn.KanbanCard className="min-w-64">
       <div className="flex w-full items-center gap-2">
         <Avatar image="https://res.cloudinary.com/subframe/image/upload/v1711417560/shared/je4hu6euqvp9ppkibkno.png">
           AB

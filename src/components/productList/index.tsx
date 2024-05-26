@@ -11,7 +11,7 @@ export default function ProductList({ products, onProductSelect }: any) {
     return <div>No hay productos disponibles.</div>;
   }
   return (
-    <div className="overflow-auto flex h-full w-72 flex-none flex-col items-start gap-4 rounded bg-neutral-50 pt-1 pr-1 pb-1 pl-1">
+    <div className="overflow-auto flex lg:h-full w-full lg:w-72 flex-none flex-row lg:flex-col items-start gap-4 rounded bg-neutral-50 p-1 mb-4">
       {products.map((product) => (
         <div
           key={product.id}

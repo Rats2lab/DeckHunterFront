@@ -60,7 +60,7 @@ const Navbar = () => {
         <div className="flex w-full grow shrink-0 basis-0 items-center justify-end gap-6">
           <LenguageFilter />
           <TextField variant="filled" label="" helpText="" icon="FeatherSearch">
-            <TextField.Input placeholder="Searchbar not avialable :(" />
+            <TextField.Input placeholder="Searchbar not available :(" />
           </TextField>
         </div>
       </div>

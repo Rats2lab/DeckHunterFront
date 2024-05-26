@@ -73,13 +73,13 @@ export default function Home() {
             }}> Refresh page!</Button>
           </div>
         ) : (
-          <>
+          <div className="flex flex-col lg:flex-row w-full">
             <ProductList
               products={products}
               onProductSelect={handleProductSelect}
             />
             <ProductDetail product={selectedProduct} />
-          </>
+          </div>
         )}
       </div>
     </main>
