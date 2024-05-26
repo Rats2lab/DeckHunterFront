@@ -12,8 +12,9 @@ export default function ProductDetail({
   }
 
   return (
-    <div className="overflow-auto flex h-full w-full grow shrink-0 basis-0 flex-col items-start gap-4 rounded bg-neutral-50 pt-4 pr-4 pb-4 pl-4 FF4081">
-      <div className="flex w-full items-start justify-end gap-4 pt-2 pr-2 pb-2 pl-2">
+    <div className="overflow-auto flex h-full w-full grow shrink-0 basis-0 flex-col items-start gap-4 rounded bg-neutral-50 p-4 FF4081">
+      <div className="flex flex-col md:flex-row w-full items-start justify-end gap-4">
+        {/* Main info section */}
         <div className="flex flex-col items-start gap-4">
           <div className="flex items-center justify-center gap-2">
             <Avatar
@@ -36,14 +37,8 @@ export default function ProductDetail({
             {product.description}
           </span>
         </div>
-        <div className="flex flex-col items-start gap-6 rounded border border-solid border-neutral-border bg-default-background pt-6 pr-6 pb-6 pl-6 shadow-default">
-          <Badge
-            className="h-9 w-16 flex-none"
-            variant="neutral"
-            icon="FeatherArrowUpSquare"
-          >
-            {product.votes.toString()}
-          </Badge>
+        {/* Vote section */}
+        <div className="w-full md:max-w-80 flex flex-row justify-around items-center md:items-start gap-6 rounded border-4 border-solid border-neutral-border bg-default-background p-6 shadow-default">
           <div className="flex flex-col items-start gap-2 backgroundColor: #FF4081">
             <span className="text-body-bold font-body-bold text-default-font">
               Makers:
@@ -75,10 +70,18 @@ export default function ProductDetail({
               <span className="text-body font-body text-default-font">XX2</span>
             </div>
           </div>
+          <Badge
+            className="h-9 w-16 flex-none"
+            variant="neutral"
+            icon="FeatherArrowUpSquare"
+          >
+            {product.votes.toString()}
+          </Badge>
         </div>
       </div>
-      <div className="flex items-start gap-2">
-        <div className="flex h-full w-full grow shrink-0 basis-0 flex-col items-start gap-4 rounded border border-solid border-neutral-border bg-default-background pt-6 pr-6 pb-6 pl-6 shadow-default">
+      {/* More data 1 */}
+      <div className="flex flex-col md:flex-row items-start gap-2">
+        <div className="flex h-full w-full grow shrink-0 basis-0 flex-col items-start gap-4 rounded border border-solid border-neutral-border bg-default-background p-6 shadow-default">
           <div className="flex w-full items-center gap-2">
             <IconWithBackground
               variant="neutral"
@@ -97,7 +100,7 @@ export default function ProductDetail({
             development and optimization of LLM applications.
           </span>
         </div>
-        <div className="flex h-full w-full grow shrink-0 basis-0 flex-col items-start gap-4 rounded bg-neutral-50 pt-6 pr-6 pb-6 pl-6">
+        <div className="flex h-full w-full grow shrink-0 basis-0 flex-col items-start gap-4 rounded bg-neutral-50 p-6">
           <div className="flex w-full items-center gap-2">
             <IconWithBackground
               variant="neutral"
@@ -115,7 +118,7 @@ export default function ProductDetail({
             their LLM applications effectively.
           </span>
         </div>
-        <div className="flex h-full w-full grow shrink-0 basis-0 flex-col items-start gap-4 rounded border border-solid border-neutral-border bg-default-background pt-6 pr-6 pb-6 pl-6 shadow-default">
+        <div className="flex h-full w-full grow shrink-0 basis-0 flex-col items-start gap-4 rounded border border-solid border-neutral-border bg-default-background p-6 shadow-default">
           <div className="flex w-full items-center gap-2">
             <IconWithBackground
               variant="neutral"
@@ -132,8 +135,9 @@ export default function ProductDetail({
           </span>
         </div>
       </div>
-      <div className="flex items-start gap-2">
-        <div className="flex h-full w-full grow shrink-0 basis-0 flex-col items-start gap-4 rounded bg-neutral-50 pt-6 pr-6 pb-6 pl-6">
+      {/* More data 2 */}
+      <div className="flex flex-col md:flex-row items-start gap-2">
+        <div className="flex h-full w-full grow shrink-0 basis-0 flex-col items-start gap-4 rounded bg-neutral-50 p-6">
           <div className="flex w-full items-center gap-2">
             <IconWithBackground
               variant="neutral"
@@ -150,7 +154,7 @@ export default function ProductDetail({
             LLM platforms.
           </span>
         </div>
-        <div className="flex h-full w-full grow shrink-0 basis-0 flex-col items-start gap-4 rounded border border-solid border-neutral-border bg-default-background pt-6 pr-6 pb-6 pl-6 shadow-default">
+        <div className="flex h-full w-full grow shrink-0 basis-0 flex-col items-start gap-4 rounded border border-solid border-neutral-border bg-default-background p-6 shadow-default">
           <div className="flex w-full items-center gap-2">
             <IconWithBackground
               variant="neutral"
@@ -167,7 +171,7 @@ export default function ProductDetail({
             }
           </span>
         </div>
-        <div className="flex h-full w-full grow shrink-0 basis-0 flex-col items-start gap-4 rounded bg-neutral-50 pt-6 pr-6 pb-6 pl-6">
+        <div className="flex h-full w-full grow shrink-0 basis-0 flex-col items-start gap-4 rounded bg-neutral-50 p-6">
           <div className="flex w-full items-center gap-2">
             <IconWithBackground
               variant="neutral"
