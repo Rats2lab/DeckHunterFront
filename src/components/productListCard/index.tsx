@@ -4,12 +4,14 @@ import { Avatar, Badge, KanbanColumn } from "@/subframe";
 export default function ProductCard({
   key,
   product,
+  selectedProduct,
 }: {
   key: string;
   product: Product;
+  selectedProduct: Product;
 }) {
   return (
-    <KanbanColumn.KanbanCard className="min-w-64">
+    <KanbanColumn.KanbanCard className={"min-w-64 " + (product.id === selectedProduct.id && "bg-orange-100 border-orange-800")}>
       <div className="flex w-full items-center gap-2">
         <Avatar image="https://res.cloudinary.com/subframe/image/upload/v1711417560/shared/je4hu6euqvp9ppkibkno.png">
           AB

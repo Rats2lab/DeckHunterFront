@@ -77,6 +77,7 @@ export default function Home() {
             <ProductList
               products={products}
               onProductSelect={handleProductSelect}
+              selectedProduct={selectedProduct}
             />
             <ProductDetail product={selectedProduct} />
           </div>
