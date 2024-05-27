@@ -24,12 +24,7 @@ const Navbar = () => {
       <div className="flex w-full items-center gap-2 pt-6 pr-6 pb-2 pl-6">
         {/* Top navbar */}
         <div className="flex w-full grow shrink-0 basis-0 items-center gap-2">
-          {!isMobile && (
-            <SubframeCore.Icon
-              className="text-heading-2 font-heading-2 text-default-font"
-              name="FeatherCat"
-            />
-          )}
+          {!isMobile && <img src="/icon.png" alt="deck-hunt" className="h-10" /> }
           <Link
             href={"/"}
             className="text-heading-1 font-heading-1 text-default-font"
