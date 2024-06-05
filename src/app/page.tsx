@@ -6,42 +6,52 @@ import { Product } from "@/interfaces/product.interface";
 import { fakeProducts } from "@/lib/utils";
 import { Alert, Button } from "@/subframe";
 import { Loader } from "@/subframe/components/Loader";
-import { useEffect, useState } from "react";
+import { useEffect, useState, use } from "react";
 
 export default function Home() {
-  //Fetching products
 
   const [products, setProducts] = useState<Product[]>([]);
+  const [leaderboards, setLeaderboards] = useState<Leaderboard[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    // Realizar la solicitud de fetch para obtener los datos de los productos
+  
+    
+    const fetchLeaderboards = async () => {
+      try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/v1/leaderboard`);
+        if (!response.ok) {
+          throw new Error("Failed to fetch leaderboards");
+        }
+        const data = await response.json();
+        console.log(data);
+        //setLeaderboards(data);
+        //fetchProducts();
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
     const fetchProducts = async () => {
       try {
-        const response = await fetch(
-          `${process.env.NEXT_PUBLIC_BASE_URL}/product`
-        );
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/v1/product`);
         if (!response.ok) {
-          throw new Error("Error al obtener los productos");
+          throw new Error("Failed to fetch products");
         }
         const data = await response.json();
         setProducts(data);
         setSelectedProduct(data[0]);
-        console.log(data);
-
-        setLoading(false);
       } catch (error) {
-        //setError(error.message);
-        // Getting fake products
         setProducts(fakeProducts);
         setSelectedProduct(fakeProducts[0]);
-        console.log(fakeProducts);
-        setLoading(false);
       }
     };
 
-    fetchProducts();
+
+    // TODO aquí hacer el get leaderboard y luego invocar fetchProduct
+    fetchProducts().then(() => 
+      setLoading(false));
   }, []);
 
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(
