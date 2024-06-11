@@ -1,9 +1,12 @@
+"use client";
 import "./globals.css";
 
 import Navbar from "@/components/navbar";
 import { cn } from "../lib/utils";
+import LeaderboardProvider from "./context/leaderboardContext";
 
 export default function RootLayout({ children }: any) {
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -27,8 +30,10 @@ export default function RootLayout({ children }: any) {
       <body
         className={cn("min-h-screen bg-background font-sans antialiased h-96")}
       >
-        <Navbar />
-        {children}
+        <LeaderboardProvider>
+          <Navbar />
+          {children}
+        </LeaderboardProvider>
       </body>
     </html>
   );

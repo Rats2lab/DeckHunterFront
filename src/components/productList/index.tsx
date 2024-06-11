@@ -1,9 +1,16 @@
 import { Product } from "@/interfaces/product.interface";
 import ProductCard from "../productListCard";
+import { useContext } from "react";
+// import { DeckHunterContext } from "@/app/context/deckHunterContext";
 
-export default function ProductList({ products, onProductSelect, selectedProduct }: any) {
+export default function ProductList() {
+  // const products = useContext(DeckHunterContext).products;
+  const products: any[] = [];
+  
   const handleProductClick = (product: Product) => {
-    onProductSelect(product);
+    //TODO add function product context
+    
+    //onProductSelect(product);
   };
 
   if (!Array.isArray(products)) {
@@ -16,7 +23,7 @@ export default function ProductList({ products, onProductSelect, selectedProduct
           key={product.id}
           onClick={() => handleProductClick(product)}
         >
-          <ProductCard key={product.id} product={product} selectedProduct={selectedProduct} />
+          <ProductCard key={product.id} product={product}  />
         </div>
       ))}
     </div>

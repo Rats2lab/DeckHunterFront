@@ -18,6 +18,9 @@ for (let i = 1; i < 7; i++) {
 }
 
 const DateFilter = () => {
+  // const leaderboards = useContext(DeckHunterContext);
+
+
   const [selectedDate, setSelectedDate] = useState<Date>(lastWeekDays[0]);
 
   const dropdownDateItems = lastWeekDays.map((day) => (

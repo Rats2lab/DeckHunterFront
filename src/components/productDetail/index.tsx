@@ -1,12 +1,21 @@
-import { Product } from "@/interfaces/product.interface";
+// import { DeckHunterContext } from "@/app/context/deckHunterContext";
 import { Avatar, Badge, IconWithBackground } from "@/subframe";
 import * as SubframeCore from "@subframe/core";
+import { useContext } from "react";
 
-export default function ProductDetail({
-  product,
-}: {
-  product: Product | null;
-}) {
+export default function ProductDetail() {
+  // const product = useContext(DeckHunterContext).selectedProduct;
+  const product = {
+    id: 1,
+    title: "Product 1",
+    description: "Description 1",
+    image: "https://res.cloudinary.com/subframe/image/upload/v1711417532/shared/ofdixj8whhbrmgahq506.png",
+    price: 10,
+    votes: 10,
+    author:{
+      link: "https://twitter.com/abdelrahmanmohamed",
+    }
+  };
   if (!product) {
     return <div>Selecciona un producto! </div>;
   }
