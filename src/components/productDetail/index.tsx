@@ -37,36 +37,21 @@ export default function ProductDetail() {
           </span>
         </div>
         {/* Vote section */}
-        <div className="w-full md:max-w-80 flex flex-row justify-around items-center md:items-start gap-6 rounded border-4 border-solid border-neutral-border bg-default-background p-6 shadow-default">
+        <div className="w-full md:max-w-80 flex flex-row justify-around items-start md:items-start gap-6 rounded border-4 border-solid border-neutral-border bg-default-background p-6 shadow-default">
           <div className="flex flex-col items-start gap-2 backgroundColor: #FF4081">
             <span className="text-body-bold font-body-bold text-default-font">
               Makers:
             </span>
             <div className="flex items-center gap-2">
-              <SubframeCore.Icon
-                className="text-body font-body text-default-font"
-                name="FeatherUserSquare"
-              />
               {/* TODO This is an avatar, not a profile link! */}
-              <a href={selectedProduct.author.link}>
-                <span className="text-body font-body text-default-font">
-                  {selectedProduct.author.nickname}
-                </span>
-              </a>
-            </div>
-            <div className="flex items-center gap-2">
-              <SubframeCore.Icon
-                className="text-body font-body text-default-font"
-                name="FeatherUserSquare"
+              <img
+                src={selectedProduct.author.link}
+                alt={selectedProduct.author.nickname}
+                className="h-10 rounded-full"
               />
-              <span className="text-body font-body text-default-font">XX</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <SubframeCore.Icon
-                className="text-body font-body text-default-font"
-                name="FeatherUserSquare"
-              />
-              <span className="text-body font-body text-default-font">XX2</span>
+              <span className="text-body font-body text-default-font">
+                {selectedProduct.author.nickname}
+              </span>
             </div>
           </div>
           <Badge

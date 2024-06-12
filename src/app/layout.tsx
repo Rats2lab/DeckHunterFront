@@ -22,9 +22,7 @@ export default function RootLayout({ children }: any) {
         />
         <link
           rel="icon"
-          href="/icon?<generated>"
           type="image/png"
-          sizes="<generated>"
         />
       </head>
       <body
