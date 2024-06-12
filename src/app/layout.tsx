@@ -4,9 +4,9 @@ import "./globals.css";
 import Navbar from "@/components/navbar";
 import { cn } from "../lib/utils";
 import LeaderboardProvider from "./context/leaderboardContext";
+import ProductProvider from "./context/productContext";
 
 export default function RootLayout({ children }: any) {
-
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -32,7 +32,7 @@ export default function RootLayout({ children }: any) {
       >
         <LeaderboardProvider>
           <Navbar />
-          {children}
+          <ProductProvider>{children}</ProductProvider>
         </LeaderboardProvider>
       </body>
     </html>
