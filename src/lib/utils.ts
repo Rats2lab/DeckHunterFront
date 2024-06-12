@@ -6,6 +6,20 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
+export const fetchProducts = async (leaderboardId: string) => {
+  try {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/v1/product?leaderboardId=${leaderboardId}&offset=0&limit=15`
+    );
+    if (!response.ok) {
+      throw new Error("Failed to fetch products");
+    }
+    const data = await response.json();
+    return data.data;
+  } catch (error) {
+    throw new Error("Failed to fetch products");
+  }
+};
 
 export const fakeProducts: Product[] = [
   {

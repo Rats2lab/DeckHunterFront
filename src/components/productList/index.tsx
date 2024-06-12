@@ -1,13 +1,8 @@
 import { useProductContext } from "@/app/hooks/useProduct";
-import { Product } from "@/interfaces/product.interface";
 import ProductCard from "../productListCard";
 
 export default function ProductList() {
   const { products, setSelectedProduct } = useProductContext();
-
-  const handleProductClick = (product: Product) => {
-    setSelectedProduct(product);
-  };
 
   if (!Array.isArray(products)) {
     return <div>No hay productos disponibles.</div>;
@@ -17,7 +12,7 @@ export default function ProductList() {
       {products.map((product) => (
         <div
           key={product.id}
-          onClick={() => handleProductClick(product)}
+          onClick={() => setSelectedProduct(product)}
         >
           <ProductCard key={product.id} product={product}  />
         </div>

@@ -31,8 +31,10 @@ export default function RootLayout({ children }: any) {
         className={cn("min-h-screen bg-background font-sans antialiased h-96")}
       >
         <LeaderboardProvider>
-          <Navbar />
-          <ProductProvider>{children}</ProductProvider>
+          <ProductProvider>
+            <Navbar />
+            {children}
+          </ProductProvider>
         </LeaderboardProvider>
       </body>
     </html>

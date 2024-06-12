@@ -7,6 +7,7 @@ import { Loader } from "@/subframe/components/Loader";
 import { useEffect, useState } from "react";
 import { useLeaderboardContext } from "./hooks/useLeaderboard";
 import { useProductContext } from "./hooks/useProduct";
+import { fetchProducts } from "@/lib/utils";
 
 export default function Home() {
   const [loading, setLoading] = useState<boolean>(false);
@@ -27,24 +28,11 @@ export default function Home() {
         const data = await response.json();
         setLeaderboards(data.data);
         // getProducts from the first leaderboard
-        fetchProducts(data.data[0].id);
+        fetchProducts(data.data[0].id).then((products) => {
+          setProducts(products);
+        });
       } catch (error) {
         console.error(error);
-      }
-    };
-
-    const fetchProducts = async (leaderboardId: string) => {
-      try {
-        const response = await fetch(
-          `${process.env.NEXT_PUBLIC_BASE_URL}/v1/product?leaderboardId=${leaderboardId}&offset=0&limit=15`
-        );
-        if (!response.ok) {
-          throw new Error("Failed to fetch products");
-        }
-        const data = await response.json();
-        setProducts(data.data);
-      } catch (error) {
-        throw new Error("Failed to fetch products");
       }
     };
 

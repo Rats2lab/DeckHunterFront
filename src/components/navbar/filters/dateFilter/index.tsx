@@ -1,6 +1,8 @@
 "use client";
 
 import { useLeaderboardContext } from "@/app/hooks/useLeaderboard";
+import { useProductContext } from "@/app/hooks/useProduct";
+import { fetchProducts } from "@/lib/utils";
 import { Button, DropdownMenu } from "@/subframe";
 import * as SubframeCore from "@subframe/core";
 
@@ -15,6 +17,7 @@ const dateLocaleOptions = {
 const DateFilter = () => {
   const { leaderboards, selectedLeaderboard, setSelectedLeaderboard } =
     useLeaderboardContext();
+    const {setProducts} = useProductContext();
 
   const dropdownDateItems = leaderboards.map((leaderboard) => (
     <DropdownMenu.DropdownItem
@@ -22,6 +25,9 @@ const DateFilter = () => {
       key={leaderboard.id}
       onClick={() => {
         setSelectedLeaderboard(leaderboard);
+        fetchProducts(leaderboard.id).then((products) => {
+          setProducts(products);
+        })
       }}
     >
       {new Date(leaderboard.date).toLocaleDateString(
