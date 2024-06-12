@@ -12,6 +12,8 @@ export default function Home() {
   const [error, setError] = useState<string | null>(null);
   const { setLeaderboards } = useLeaderboardContext();
 
+
+  // Initialize data: getting leaderboards and products
   useEffect(() => {
     const fetchLeaderboards = async () => {
       try {

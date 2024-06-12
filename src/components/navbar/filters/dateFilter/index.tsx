@@ -1,8 +1,8 @@
 "use client";
 
+import { useLeaderboardContext } from "@/app/hooks/useLeaderboard";
 import { Button, DropdownMenu } from "@/subframe";
 import * as SubframeCore from "@subframe/core";
-import { useState } from "react";
 
 const dateLocaleOptions = {
   weekday: "long",
@@ -10,28 +10,24 @@ const dateLocaleOptions = {
   month: "long",
   day: "numeric",
 } as const;
-const lastWeekDays: Date[] = [];
 
-for (let i = 1; i < 7; i++) {
-  let day = new Date(new Date().setDate(new Date().getDate() - i));
-  lastWeekDays.push(day);
-}
 
 const DateFilter = () => {
-  // const leaderboards = useContext(DeckHunterContext);
+  const { leaderboards, selectedLeaderboard, setSelectedLeaderboard } =
+    useLeaderboardContext();
 
-
-  const [selectedDate, setSelectedDate] = useState<Date>(lastWeekDays[0]);
-
-  const dropdownDateItems = lastWeekDays.map((day) => (
+  const dropdownDateItems = leaderboards.map((leaderboard) => (
     <DropdownMenu.DropdownItem
       icon="FeatherCalendar"
-      key={day.valueOf()}
+      key={leaderboard.id}
       onClick={() => {
-        setSelectedDate(day);
+        setSelectedLeaderboard(leaderboard);
       }}
     >
-      {day.toLocaleDateString(undefined, dateLocaleOptions)}
+      {new Date(leaderboard.date).toLocaleDateString(
+        undefined,
+        dateLocaleOptions
+      )}
     </DropdownMenu.DropdownItem>
   ));
 
@@ -47,10 +43,12 @@ const DateFilter = () => {
                   iconRight="FeatherChevronDown"
                   icon="FeatherCalendarDays"
                 >
-                  {selectedDate.toLocaleDateString(
-                    undefined,
-                    dateLocaleOptions
-                  )}
+                  {selectedLeaderboard
+                    ? new Date(selectedLeaderboard.date).toLocaleDateString(
+                        undefined,
+                        dateLocaleOptions
+                      )
+                    : "Select date"}
                 </Button>
               </SubframeCore.DropdownMenu.Trigger>
               <SubframeCore.DropdownMenu.Portal>

@@ -19,7 +19,6 @@ const LeaderboardProvider: React.FC<{ children: React.ReactNode }> = ({
     useState<Leaderboard | null>(null);
 
   const setLeaderboards = (newLeaderboards: Array<Leaderboard>) => {
-    console.log(newLeaderboards);
     setCurrentLeaderboards(newLeaderboards);
     setSelectedCurrentLeaderboard(newLeaderboards[0]);
   };
