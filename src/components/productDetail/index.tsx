@@ -1,22 +1,12 @@
 // import { DeckHunterContext } from "@/app/context/deckHunterContext";
+import { useProductContext } from "@/app/hooks/useProduct";
 import { Avatar, Badge, IconWithBackground } from "@/subframe";
 import * as SubframeCore from "@subframe/core";
-import { useContext } from "react";
 
 export default function ProductDetail() {
-  // const product = useContext(DeckHunterContext).selectedProduct;
-  const product = {
-    id: 1,
-    title: "Product 1",
-    description: "Description 1",
-    image: "https://res.cloudinary.com/subframe/image/upload/v1711417532/shared/ofdixj8whhbrmgahq506.png",
-    price: 10,
-    votes: 10,
-    author:{
-      link: "https://twitter.com/abdelrahmanmohamed",
-    }
-  };
-  if (!product) {
+  const { selectedProduct } = useProductContext();
+
+  if (!selectedProduct) {
     return <div>Selecciona un producto! </div>;
   }
 
@@ -36,14 +26,14 @@ export default function ProductDetail() {
               AB
             </Avatar>
             <span className="text-heading-1 font-heading-1 text-default-font">
-              {product.title}
+              {selectedProduct.title}
             </span>
           </div>
           <span className="text-heading-2 font-heading-2 text-subtext-color">
             +120 Resources for PH Launch Day
           </span>
           <span className="whitespace-pre-wrap text-body font-body text-default-font">
-            {product.description}
+            {selectedProduct.description}
           </span>
         </div>
         {/* Vote section */}
@@ -58,9 +48,9 @@ export default function ProductDetail() {
                 name="FeatherUserSquare"
               />
               {/* TODO This is an avatar, not a profile link! */}
-              <a href={product.author.link}>
+              <a href={selectedProduct.author.link}>
                 <span className="text-body font-body text-default-font">
-                  {product.author.nickname}
+                  {selectedProduct.author.nickname}
                 </span>
               </a>
             </div>
@@ -84,7 +74,7 @@ export default function ProductDetail() {
             variant="neutral"
             icon="FeatherArrowUpSquare"
           >
-            {product.votes.toString()}
+            {selectedProduct.votes.toString()}
           </Badge>
         </div>
       </div>

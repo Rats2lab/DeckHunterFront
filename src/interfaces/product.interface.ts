@@ -15,7 +15,7 @@ export interface Product {
 }
 
 export type ProductContextType = {
-  Products: Product[];
+  products: Product[];
   selectedProduct: Product | null;
   setSelectedProduct: (newSelectedProduct: Product) => void;
   setProducts: (newProducts: Array<Product>) => void;

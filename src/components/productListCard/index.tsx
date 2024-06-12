@@ -1,3 +1,4 @@
+import { useProductContext } from "@/app/hooks/useProduct";
 import { Product } from "@/interfaces/product.interface";
 import { Avatar, Badge, KanbanColumn } from "@/subframe";
 
@@ -8,14 +9,7 @@ export default function ProductCard({
   key: string;
   product: Product;
 }) {
-  const selectedProduct = {
-    id: "1",
-    author: {
-      id: "1",
-      nickname: "alexg",
-      link: "https://github.com/alexg",
-    }
-  };
+  const {selectedProduct} = useProductContext();
 
   // TODO FIX selectedProdcut style? 
   return (

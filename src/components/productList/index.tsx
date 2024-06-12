@@ -1,16 +1,12 @@
+import { useProductContext } from "@/app/hooks/useProduct";
 import { Product } from "@/interfaces/product.interface";
 import ProductCard from "../productListCard";
-import { useContext } from "react";
-// import { DeckHunterContext } from "@/app/context/deckHunterContext";
 
 export default function ProductList() {
-  // const products = useContext(DeckHunterContext).products;
-  const products: any[] = [];
-  
+  const { products, setSelectedProduct } = useProductContext();
+
   const handleProductClick = (product: Product) => {
-    //TODO add function product context
-    
-    //onProductSelect(product);
+    setSelectedProduct(product);
   };
 
   if (!Array.isArray(products)) {

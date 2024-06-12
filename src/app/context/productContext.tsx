@@ -30,7 +30,7 @@ const ProductProvider: React.FC<{ children: React.ReactNode }> = ({
   return (
     <ProductContext.Provider
       value={{
-        Products: currentProducts,
+        products: currentProducts,
         selectedProduct: selectedCurrentProduct,
         setSelectedProduct,
         setProducts,
