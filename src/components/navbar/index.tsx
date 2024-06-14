@@ -54,7 +54,7 @@ const Navbar = () => {
       {/* Down navbar  */}
       <div className="flex w-full items-center flex-col md:flex-row gap-6 border-b border-solid border-neutral-border pt-2 pr-6 pb-2 pl-6">
         <DateFilter />
-        <div className="flex w-full grow shrink-0 basis-0 items-center justify-end gap-6">
+        <div className="flex w-full grow shrink-0 basis-0 items-center justify-end gap-6 hidden">
           <LenguageFilter />
           <TextField variant="filled" label="" helpText="" icon="FeatherSearch">
             <TextField.Input placeholder="Searchbar not available :(" />

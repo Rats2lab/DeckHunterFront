@@ -1,7 +1,7 @@
 // import { DeckHunterContext } from "@/app/context/deckHunterContext";
 import { useProductContext } from "@/app/hooks/useProduct";
-import { Avatar, Badge, IconWithBackground } from "@/subframe";
-import * as SubframeCore from "@subframe/core";
+import { Avatar, Badge, Button, IconWithBackground } from "@/subframe";
+import LeadMagnet from "../leadMagnet";
 
 export default function ProductDetail() {
   const { selectedProduct } = useProductContext();
@@ -64,7 +64,8 @@ export default function ProductDetail() {
         </div>
       </div>
       {/* More data 1 */}
-      <div className="flex flex-col md:flex-row items-start gap-2">
+      <div className="flex flex-col md:flex-row items-start gap-2 relative">
+        <LeadMagnet />
         <div className="flex h-full w-full grow shrink-0 basis-0 flex-col items-start gap-4 rounded border border-solid border-neutral-border bg-default-background p-6 shadow-default">
           <div className="flex w-full items-center gap-2">
             <IconWithBackground
@@ -76,7 +77,7 @@ export default function ProductDetail() {
               Problem
             </span>
           </div>
-          <span className="h-full w-full grow shrink-0 basis-0 text-body-bold font-body-bold text-default-font">
+          <span className="h-full w-full grow shrink-0 basis-0 text-body-bold font-body-bold text-default-font blur-sm">
             Developers and engineers managing large language models (LLMs)
             struggle with observability, performance tracing, and effective
             management of prompts and evaluations. Lack of effective tools for
@@ -95,11 +96,11 @@ export default function ProductDetail() {
               Solution
             </span>
           </div>
-          <span className="h-full w-full grow shrink-0 basis-0 text-body-bold font-body-bold text-default-font">
-            Langfuse is an open source LLM Engineering Platform designed to
-            provide comprehensive tools for observability, tracing, evaluations,
-            prompt management, and metrics, allowing users to debug and improve
-            their LLM applications effectively.
+          <span className="h-full w-full grow shrink-0 basis-0 text-body-bold font-body-bold text-default-font blur-sm">
+            Tool is an open source LLM Engineering Platform designed to provide
+            comprehensive tools for observability, tracing, evaluations, prompt
+            management, and metrics, allowing users to debug and improve their
+            LLM applications effectively.
           </span>
         </div>
         <div className="flex h-full w-full grow shrink-0 basis-0 flex-col items-start gap-4 rounded border border-solid border-neutral-border bg-default-background p-6 shadow-default">
@@ -113,7 +114,7 @@ export default function ProductDetail() {
               Customers
             </span>
           </div>
-          <span className="h-full w-full grow shrink-0 basis-0 text-body-bold font-body-bold text-default-font">
+          <span className="h-full w-full grow shrink-0 basis-0 text-body-bold font-body-bold text-default-font blur-sm">
             Developers and engineers working on applications involving large
             language models across various industries.
           </span>
@@ -132,10 +133,10 @@ export default function ProductDetail() {
               Unique features
             </span>
           </div>
-          <span className="h-full w-full grow shrink-0 basis-0 text-body-bold font-body-bold text-default-font">
+          <span className="h-full w-full grow shrink-0 basis-0 text-body-bold font-body-bold text-default-font blur-sm">
             Open source flexibility, compatibility with any model or framework,
-            and the ability to export all data differentiate Langfuse from other
-            LLM platforms.
+            and the ability to export all data differentiate Tool from other LLM
+            platforms.
           </span>
         </div>
         <div className="flex h-full w-full grow shrink-0 basis-0 flex-col items-start gap-4 rounded border border-solid border-neutral-border bg-default-background p-6 shadow-default">
@@ -149,7 +150,7 @@ export default function ProductDetail() {
               Alternatives
             </span>
           </div>
-          <span className="h-full w-full grow shrink-0 basis-0 whitespace-pre-wrap text-body-bold font-body-bold text-default-font">
+          <span className="h-full w-full grow shrink-0 basis-0 whitespace-pre-wrap text-body-bold font-body-bold text-default-font blur-sm">
             {
               "1. Weights & Biases\r\n2. TensorBoard\r\n3. Comet.ml\r\n4. MLflow\r\n5. Hugging Face Spaces"
             }
@@ -166,7 +167,7 @@ export default function ProductDetail() {
               Market size
             </span>
           </div>
-          <span className="h-full w-full grow shrink-0 basis-0 text-body-bold font-body-bold text-default-font">
+          <span className="h-full w-full grow shrink-0 basis-0 text-body-bold font-body-bold text-default-font blur-sm">
             The global AI software market is projected to grow to $126 billion
             by 2025.
           </span>
