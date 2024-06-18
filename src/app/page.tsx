@@ -10,7 +10,7 @@ import { useProductContext } from "./hooks/useProduct";
 import { fetchProducts } from "@/lib/utils";
 
 export default function Home() {
-  const [loading, setLoading] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const { setLeaderboards } = useLeaderboardContext();
   const { setProducts } = useProductContext();

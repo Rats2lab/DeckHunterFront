@@ -3,7 +3,7 @@
 import { useLeaderboardContext } from "@/app/hooks/useLeaderboard";
 import { useProductContext } from "@/app/hooks/useProduct";
 import { fetchProducts } from "@/lib/utils";
-import { Button, DropdownMenu } from "@/subframe";
+import { Button, DropdownMenu, Loader } from "@/subframe";
 import * as SubframeCore from "@subframe/core";
 
 const dateLocaleOptions = {
@@ -13,11 +13,10 @@ const dateLocaleOptions = {
   day: "numeric",
 } as const;
 
-
 const DateFilter = () => {
   const { leaderboards, selectedLeaderboard, setSelectedLeaderboard } =
     useLeaderboardContext();
-    const {setProducts} = useProductContext();
+  const { setProducts } = useProductContext();
 
   const dropdownDateItems = leaderboards.map((leaderboard) => (
     <DropdownMenu.DropdownItem
@@ -27,7 +26,7 @@ const DateFilter = () => {
         setSelectedLeaderboard(leaderboard);
         fetchProducts(leaderboard.id).then((products) => {
           setProducts(products);
-        })
+        });
       }}
     >
       {new Date(leaderboard.date).toLocaleDateString(
@@ -39,38 +38,44 @@ const DateFilter = () => {
 
   return (
     <>
-      <SubframeCore.DropdownMenu.Root>
-        <SubframeCore.DropdownMenu.Trigger asChild={true}>
-          <div className="flex items-start gap-1">
-            <SubframeCore.DropdownMenu.Root>
-              <SubframeCore.DropdownMenu.Trigger asChild={true}>
-                <Button
-                  variant="neutral-tertiary"
-                  iconRight="FeatherChevronDown"
-                  icon="FeatherCalendarDays"
-                >
-                  {selectedLeaderboard
-                    ? new Date(selectedLeaderboard.date).toLocaleDateString(
-                        undefined,
-                        dateLocaleOptions
-                      )
-                    : "Select date"}
-                </Button>
-              </SubframeCore.DropdownMenu.Trigger>
-              <SubframeCore.DropdownMenu.Portal>
-                <SubframeCore.DropdownMenu.Content
-                  side="bottom"
-                  align="start"
-                  sideOffset={4}
-                  asChild={true}
-                >
-                  <DropdownMenu>{dropdownDateItems}</DropdownMenu>
-                </SubframeCore.DropdownMenu.Content>
-              </SubframeCore.DropdownMenu.Portal>
-            </SubframeCore.DropdownMenu.Root>
-          </div>
-        </SubframeCore.DropdownMenu.Trigger>
-      </SubframeCore.DropdownMenu.Root>
+      {leaderboards.length === 0 ? (
+        <div className="h-full w-full flex justify-center content-center">
+          <Loader size="medium" />
+        </div>
+      ) : (
+        <SubframeCore.DropdownMenu.Root>
+          <SubframeCore.DropdownMenu.Trigger asChild={true}>
+            <div className="flex items-start gap-1">
+              <SubframeCore.DropdownMenu.Root>
+                <SubframeCore.DropdownMenu.Trigger asChild={true}>
+                  <Button
+                    variant="neutral-tertiary"
+                    iconRight="FeatherChevronDown"
+                    icon="FeatherCalendarDays"
+                  >
+                    {selectedLeaderboard
+                      ? new Date(selectedLeaderboard.date).toLocaleDateString(
+                          undefined,
+                          dateLocaleOptions
+                        )
+                      : "Select date"}
+                  </Button>
+                </SubframeCore.DropdownMenu.Trigger>
+                <SubframeCore.DropdownMenu.Portal>
+                  <SubframeCore.DropdownMenu.Content
+                    side="bottom"
+                    align="start"
+                    sideOffset={4}
+                    asChild={true}
+                  >
+                    <DropdownMenu>{dropdownDateItems}</DropdownMenu>
+                  </SubframeCore.DropdownMenu.Content>
+                </SubframeCore.DropdownMenu.Portal>
+              </SubframeCore.DropdownMenu.Root>
+            </div>
+          </SubframeCore.DropdownMenu.Trigger>
+        </SubframeCore.DropdownMenu.Root>
+      )}
     </>
   );
 };
