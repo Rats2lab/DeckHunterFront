@@ -32,7 +32,7 @@ export default function LeadMagnet() {
   };
 
   return (
-    <div className="p-4 bg-white md:w-1/3 border-black border-2 rounded-sm absolute -left-3 top-28 z-10 md:left-1/3">
+    <div className="p-2 bg-white md:w-1/3 border-black border-2 rounded-sm absolute -left-3 top-28 z-10 md:left-1/3">
       {content}
     </div>
   );

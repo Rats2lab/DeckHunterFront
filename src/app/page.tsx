@@ -40,8 +40,8 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="h-screen p-1">
-      <div className="flex h-full w-full grow shrink-0 basis-0 items-start gap-4 bg-default-background pt-6 pr-6 pb-6 pl-6">
+    <main className="md:h-screen p-1">
+      <div className="flex w-full md:h-full grow shrink-0 basis-0 items-start gap-4 bg-default-background pt-6 pr-6 pb-6 pl-6">
         {loading ? (
           <div className="h-full w-full flex justify-center content-center">
             <Loader size="large" />
@@ -65,7 +65,7 @@ export default function Home() {
             </Button>
           </div>
         ) : (
-          <div className="flex flex-col lg:flex-row w-full min-h-full md:h-full">
+          <div className="flex flex-col lg:flex-row w-full mt-28 md:min-h-full">
             <ProductList />
             <ProductDetail />
           </div>

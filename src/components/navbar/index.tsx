@@ -20,7 +20,7 @@ const Navbar = () => {
   const isMobile = screenWidth < 768;
 
   return (
-    <>
+    <div className="fixed top-0 z-20 bg-white flex flex-col w-full">
       <div className="flex w-full items-center gap-2 pt-6 pr-6 pb-2 pl-6">
         {/* Top navbar */}
         <div className="flex w-full grow shrink-0 basis-0 items-center gap-2">
@@ -61,7 +61,7 @@ const Navbar = () => {
           </TextField>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
