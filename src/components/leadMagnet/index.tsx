@@ -1,12 +1,13 @@
 import { Button } from "@/subframe";
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 
 export default function LeadMagnet() {
   const [step, setStep] = useState(1);
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault(); // Prevenir el comportamiento predeterminado de recargar la página
     try {
       const response = await fetch("/api/send-email", {
         method: "POST",
@@ -40,7 +41,7 @@ export default function LeadMagnet() {
       break;
     case 2:
       content = (
-        <form onSubmit={() => handleSubmit()}>
+        <form onSubmit={handleSubmit}>
           <div className="flex flex-col items-center justify-center gap-4">
             <span className="text-heading-3 font-heading-3 text-default-font">
               We are working in this feature right now ⚙️
@@ -70,7 +71,7 @@ export default function LeadMagnet() {
       content = (
         <div>
           <span className="text-heading-3 font-heading-3 text-default-font">
-            Thanks! We'll be in touch 🤙
+            Thanks! We&apos;ll be in touch 🤙
           </span>
         </div>
       );
