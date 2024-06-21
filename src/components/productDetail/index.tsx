@@ -1,8 +1,6 @@
-// import { DeckHunterContext } from "@/app/context/deckHunterContext";
 import { useProductContext } from "@/app/hooks/useProduct";
 import { Avatar, Badge, Button, IconWithBackground } from "@/subframe";
 import LeadMagnet from "../leadMagnet";
-import { useRef } from "react";
 
 export default function ProductDetail() {
   const { selectedProduct } = useProductContext();

@@ -34,7 +34,7 @@ const Navbar = () => {
           <Badge>Beta</Badge>
         </div>
         <div className="items-center">
-          <Button variant="brand-primary" size="medium">
+          <Button variant="brand-primary" size="medium" onClick={() => window.open("https://buymeacoffee.com/rats2lab")}>
             {isMobile ? "Buy us a ☕" : "Buy us a coffee ☕"}
           </Button>
           {!isMobile && (
