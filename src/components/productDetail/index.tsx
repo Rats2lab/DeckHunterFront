@@ -6,7 +6,20 @@ export default function ProductDetail() {
   const { selectedProduct } = useProductContext();
 
   if (!selectedProduct) {
-    return <div>Selecciona un producto! </div>;
+    return (
+      <div>
+        <span className="text-heading-3 font-heading-3 text-default-font">
+            Products are not avialable, please refresh the page or give us your
+            email to be notified
+          </span>
+          <div className="flex flex-col items-start gap-2 relative">
+          <LeadMagnet
+            CTAText="I want be notified!"
+            DisclaimerText="✉️ Cool! Leave your best email here:"
+          />
+          </div>
+      </div>
+    );
   }
 
   return (
@@ -64,7 +77,10 @@ export default function ProductDetail() {
       </div>
       {/* More data 1 */}
       <div className="flex flex-col md:flex-row items-start gap-2 relative">
-        <LeadMagnet />
+        <LeadMagnet
+          CTAText="Generate this content with IA!"
+          DisclaimerText={"We are working in this feature right now ⚙️\nIf you want to be the first in know about our news, leave your best email here:"}
+        />
         <div className="flex h-full w-full grow shrink-0 basis-0 flex-col items-start gap-4 rounded border border-solid border-neutral-border bg-default-background p-6 shadow-default">
           <div className="flex w-full items-center gap-2">
             <IconWithBackground

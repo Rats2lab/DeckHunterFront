@@ -1,7 +1,8 @@
 import { Button } from "@/subframe";
+import { disconnect } from "process";
 import { FormEvent, useState } from "react";
 
-export default function LeadMagnet() {
+export default function LeadMagnet({CTAText, DisclaimerText}: any) {
   const [step, setStep] = useState(1);
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -35,7 +36,7 @@ export default function LeadMagnet() {
     case 1:
       content = (
         <Button className="p-6" onClick={() => setStep(step + 1)}>
-          Generate this content with IA!
+          {CTAText}
         </Button>
       );
       break;
@@ -43,11 +44,8 @@ export default function LeadMagnet() {
       content = (
         <form onSubmit={handleSubmit}>
           <div className="flex flex-col items-center justify-center gap-4">
-            <span className="text-heading-3 font-heading-3 text-default-font">
-              We are working in this feature right now ⚙️
-              <br />
-              If you want to be the first in know about our news, leave your
-              best email here:
+            <span className="text-heading-3 font-heading-3 text-default-font whitespace-pre-wrap">
+             {DisclaimerText}
             </span>
             <input
               className="border-2 border-solid border-neutral-border p-2"
