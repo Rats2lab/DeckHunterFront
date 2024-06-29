@@ -1,23 +1,24 @@
 import { useProductContext } from "@/app/hooks/useProduct";
 import { Avatar, Badge, Button, IconWithBackground } from "@/subframe";
 import LeadMagnet from "../leadMagnet";
+import { Icon } from "@subframe/core";
 
 export default function ProductDetail() {
   const { selectedProduct } = useProductContext();
 
   if (!selectedProduct) {
     return (
-      <div>
+      <div className="w-full p-4">
         <span className="text-heading-3 font-heading-3 text-default-font">
-            Products are not avialable, please refresh the page or give us your
-            email to be notified
-          </span>
-          <div className="flex flex-col items-start gap-2 relative">
+          Products are not avialable yet, please refresh the page or give us
+          your email to be notified
+        </span>
+        <div className="flex flex-col items-start gap-2 relative">
           <LeadMagnet
             CTAText="I want be notified!"
             DisclaimerText="✉️ Cool! Leave your best email here:"
           />
-          </div>
+        </div>
       </div>
     );
   }
@@ -32,7 +33,7 @@ export default function ProductDetail() {
               className="h-20 w-20 flex-none"
               variant="brand"
               size="large"
-              image="https://res.cloudinary.com/subframe/image/upload/v1711417532/shared/ofdixj8whhbrmgahq506.png"
+              image={selectedProduct.thumbnail}
               square={false}
             >
               AB
@@ -42,7 +43,7 @@ export default function ProductDetail() {
             </span>
           </div>
           <span className="text-heading-2 font-heading-2 text-subtext-color">
-            +120 Resources for PH Launch Day
+            {selectedProduct.tagline}
           </span>
           <span className="whitespace-pre-wrap text-body font-body text-default-font">
             {selectedProduct.description}
@@ -50,24 +51,26 @@ export default function ProductDetail() {
         </div>
         {/* Vote section */}
         <div className="w-full md:max-w-80 flex flex-row justify-around items-start md:items-start gap-6 rounded border-4 border-solid border-neutral-border bg-default-background p-6 shadow-default">
-          <div className="flex flex-col items-start gap-2 backgroundColor: #FF4081">
-            <span className="text-body-bold font-body-bold text-default-font">
-              Makers:
-            </span>
-            <div className="flex items-center gap-2">
-              {/* TODO This is an avatar, not a profile link! */}
-              <img
-                src={selectedProduct.author.link}
-                alt={selectedProduct.author.nickname}
-                className="h-10 rounded-full"
-              />
-              <span className="text-body font-body text-default-font">
-                {selectedProduct.author.nickname}
-              </span>
-            </div>
+          <div>
+            <Icon name={"FeatherWebhook"} className="h-9 flex-none" />
+            <a
+              href={selectedProduct.link}
+              target="_blank"
+              className="underline"
+            >
+              Go to Website
+            </a>
+            <Icon name={"FeatherCat"} className="h-9 flex-none" />
+            <a
+              href={selectedProduct.providerExternalLink}
+              target="_blank"
+              className="underline"
+            >
+              Visit in Product Hunt
+            </a>
           </div>
           <Badge
-            className="h-9 w-16 flex-none"
+            className="h-9 flex-none"
             variant="neutral"
             icon="FeatherArrowUpSquare"
           >
@@ -79,7 +82,9 @@ export default function ProductDetail() {
       <div className="flex flex-col md:flex-row items-start gap-2 relative">
         <LeadMagnet
           CTAText="Generate this content with IA!"
-          DisclaimerText={"We are working in this feature right now ⚙️\nIf you want to be the first in know about our news, leave your best email here:"}
+          DisclaimerText={
+            "We are working in this feature right now ⚙️\nIf you want to be the first in know about our news, leave your best email here:"
+          }
         />
         <div className="flex h-full w-full grow shrink-0 basis-0 flex-col items-start gap-4 rounded border border-solid border-neutral-border bg-default-background p-6 shadow-default">
           <div className="flex w-full items-center gap-2">

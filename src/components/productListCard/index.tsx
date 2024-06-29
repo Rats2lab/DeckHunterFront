@@ -15,7 +15,7 @@ export default function ProductCard({
   return (
     <KanbanColumn.KanbanCard className={"min-w-64 " + (product.id === selectedProduct?.id && "bg-orange-100 border-orange-800")}>
       <div className="flex w-full items-center gap-2">
-        <Avatar image="https://res.cloudinary.com/subframe/image/upload/v1711417560/shared/je4hu6euqvp9ppkibkno.png">
+        <Avatar image={product.thumbnail}>
           AB
         </Avatar>
         <div className="flex w-full grow shrink-0 basis-0 flex-col items-start">

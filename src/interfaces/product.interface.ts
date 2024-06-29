@@ -6,11 +6,14 @@ interface Author {
 
 export interface Product {
   id: string;
-  author: Author;
   title: string;
   description: string;
   launchDate: Date;
   votes: number;
+  link: string;
+  providerExternalLink: string;
+  thumbnail: string;
+  tagline: string;
   country: string;
 }
 

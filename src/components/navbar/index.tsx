@@ -45,7 +45,7 @@ const Navbar = () => {
                 target="_blank"
                 className="underline"
               >
-                Hunters Labs
+                Rats 2 Lab
               </a>
             </a>
           )}
