@@ -1,9 +1,3 @@
-interface Author {
-  id: string;
-  nickname: string;
-  link: string;
-}
-
 export interface Product {
   id: string;
   title: string;

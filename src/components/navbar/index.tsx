@@ -41,7 +41,7 @@ const Navbar = () => {
             <a className="text-caption">
               Made with 💛 by{" "}
               <a
-                href="https://github.com/My-Tech-Laboratory"
+                href="https://github.com/Rats2lab"
                 target="_blank"
                 className="underline"
               >
