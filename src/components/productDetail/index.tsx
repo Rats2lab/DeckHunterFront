@@ -25,7 +25,7 @@ export default function ProductDetail() {
 
   return (
     <div className="md:overflow-auto flex w-full md:h-full grow shrink-0 basis-0 flex-col items-start gap-4 rounded bg-neutral-50 p-4 FF4081">
-      <div className="flex flex-col md:flex-row w-full items-start justify-end gap-4">
+      <div className="flex flex-col md:flex-row w-full items-start justify-between gap-4">
         {/* Main info section */}
         <div className="flex flex-col items-start gap-4">
           <div className="flex items-center justify-center gap-2">

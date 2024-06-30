@@ -65,7 +65,7 @@ export default function Home() {
             </Button>
           </div>
         ) : (
-          <div className="flex flex-col lg:flex-row w-full mt-28 md:min-h-full">
+          <div className="flex flex-col lg:flex-row w-full mt-28 h-full">
             <ProductList />
             <ProductDetail />
           </div>
