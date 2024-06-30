@@ -51,26 +51,30 @@ export default function ProductDetail() {
         </div>
         {/* Vote section */}
         <div className="w-full md:max-w-80 flex flex-row justify-around items-start md:items-start gap-6 rounded border-4 border-solid border-neutral-border bg-default-background p-6 shadow-default">
-          <div>
-            <Icon name={"FeatherWebhook"} className="h-9 flex-none" />
-            <a
-              href={selectedProduct.link}
-              target="_blank"
-              className="underline"
-            >
-              Go to Website
-            </a>
-            <Icon name={"FeatherCat"} className="h-9 flex-none" />
-            <a
-              href={selectedProduct.providerExternalLink}
-              target="_blank"
-              className="underline"
-            >
-              Visit in Product Hunt
-            </a>
+          <div className="flex flex-col items-start gap-2">
+            <div className="text-blue-700 flex flex-row items-center">
+              <IconWithBackground icon={"FeatherGlobe"} size="large"  className="h-9 m-2 flex-none" />
+              <a
+                href={selectedProduct.link}
+                target="_blank"
+                className="whitespace-pre-wrap text-body font-body"
+              >
+                Go to website
+              </a>
+            </div>
+            <div className="text-blue-700 flex flex-row items-center">
+              <IconWithBackground icon={"FeatherCat"} size="large" className="h-9 m-2 flex-none" />
+              <a
+                href={selectedProduct.providerExternalLink}
+                target="_blank"
+                className="whitespace-pre-wrap text-body font-body"
+              >
+                Visit in Product Hunt
+              </a>
+            </div>
           </div>
           <Badge
-            className="h-9 flex-none"
+            className="h-9 m-2 flex-none"
             variant="neutral"
             icon="FeatherArrowUpSquare"
           >

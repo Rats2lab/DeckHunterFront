@@ -11,7 +11,6 @@ export default function ProductCard({
 }) {
   const {selectedProduct} = useProductContext();
 
-  // TODO FIX selectedProdcut style? 
   return (
     <KanbanColumn.KanbanCard className={"min-w-64 " + (product.id === selectedProduct?.id && "bg-orange-100 border-orange-800")}>
       <div className="flex w-full items-center gap-2">
