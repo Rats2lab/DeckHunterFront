@@ -18,11 +18,11 @@ export default function ProductCard({
           AB
         </Avatar>
         <div className="flex w-full grow shrink-0 basis-0 flex-col items-start">
-          <span className="line-clamp-1 w-full text-body-bold font-body-bold text-default-font">
+          <span className="line-clamp-1 w-full text-heading-3 font-body-bold text-default-font">
             {product.title}
           </span>
-          <span className="line-clamp-3 w-full text-caption font-caption text-subtext-color">
-            {product.description}
+          <span className="line-clamp-3 w-full text-body-bold font-caption text-subtext-color">
+            {product.tagline}
           </span>
         </div>
       </div>
