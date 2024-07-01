@@ -12,8 +12,8 @@ export default function ProductCard({
   const {selectedProduct} = useProductContext();
 
   return (
-    <KanbanColumn.KanbanCard className={"min-w-64 " + (product.id === selectedProduct?.id && "bg-orange-100 border-orange-800")}>
-      <div className="flex w-full items-center gap-2">
+    <KanbanColumn.KanbanCard className={"min-w-64 h-40 " + (product.id === selectedProduct?.id && "bg-orange-100 border-orange-800")}>
+      <div className="flex w-full items-center gap-4">
         <Avatar image={product.thumbnail}>
           AB
         </Avatar>
