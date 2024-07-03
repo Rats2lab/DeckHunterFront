@@ -5,26 +5,16 @@ import Navbar from "@/components/navbar";
 import { cn } from "../lib/utils";
 import LeaderboardProvider from "./context/leaderboardContext";
 import ProductProvider from "./context/productContext";
+import Header from "@/components/Header";
 
 export default function RootLayout({ children }: any) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-        />
-      </head>
+      <Header
+        title="AI-Enhanced Product Hunt Decks"
+        description="Discover daily Product Hunt launches enhanced with AI-generated deck information including problem statements, solutions, TAM, and more."
+        keywords="Product Hunt, AI, startup decks, market analysis, TAM, product launch"
+      />
       <body
         className={cn("min-h-screen bg-background font-sans antialiased h-96")}
       >
