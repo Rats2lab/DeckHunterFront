@@ -20,7 +20,6 @@ const ProductProvider: React.FC<{ children: React.ReactNode }> = ({
 
   const setProducts = (newProducts: Array<Product>) => {
     setCurrentProducts(newProducts);
-    setSelectedCurrentProduct(newProducts[0]);
   };
 
   const setSelectedProduct = (newSelectedProduct: Product) => {

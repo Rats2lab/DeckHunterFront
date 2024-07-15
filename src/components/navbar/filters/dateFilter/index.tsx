@@ -16,7 +16,7 @@ const dateLocaleOptions = {
 const DateFilter = () => {
   const { leaderboards, selectedLeaderboard, setSelectedLeaderboard } =
     useLeaderboardContext();
-  const { setProducts } = useProductContext();
+  const { setProducts, setSelectedProduct } = useProductContext();
 
   const dropdownDateItems = leaderboards.map((leaderboard) => (
     <DropdownMenu.DropdownItem
@@ -26,6 +26,7 @@ const DateFilter = () => {
         setSelectedLeaderboard(leaderboard);
         fetchProducts(leaderboard.id).then((products) => {
           setProducts(products);
+          setSelectedProduct(products[0]);
         });
       }}
     >
