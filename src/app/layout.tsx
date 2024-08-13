@@ -10,7 +10,9 @@ import Hotjar from "@hotjar/browser";
 
 const siteId = 5093526;
 const hotjarVersion = 6;
-Hotjar.init(siteId, hotjarVersion);
+if (process.env.NODE_ENV != "development") {
+  Hotjar.init(siteId, hotjarVersion);
+}
 
 export default function RootLayout({ children }: any) {
   return (
