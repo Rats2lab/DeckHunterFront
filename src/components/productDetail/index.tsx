@@ -1,7 +1,6 @@
 import { useProductContext } from "@/app/hooks/useProduct";
-import { Avatar, Badge, Button, IconWithBackground } from "@/subframe";
+import { Avatar, Badge, IconWithBackground } from "@/subframe";
 import LeadMagnet from "../leadMagnet";
-import { Icon } from "@subframe/core";
 
 export default function ProductDetail() {
   const { selectedProduct } = useProductContext();
@@ -36,7 +35,6 @@ export default function ProductDetail() {
               image={selectedProduct.thumbnail}
               square={false}
             >
-              AB
             </Avatar>
             <span className="text-heading-1 font-heading-1 text-default-font">
               {selectedProduct.title}
