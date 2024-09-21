@@ -113,7 +113,7 @@ const uniqueFeaturesAttribute = selectedProduct.attributes.find(
         </div>
       </div>
       {/* AI data 1 */}
-      <div className="flex flex-col md:flex-row items-start gap-2 relative">
+      <div className="flex flex-col md:flex-row items-start gap-2 relative min-w-full">
         {/* <LeadMagnet
           CTAText="Generate this content with IA!"
           DisclaimerText={
@@ -167,7 +167,7 @@ const uniqueFeaturesAttribute = selectedProduct.attributes.find(
         </div>
       </div>
       {/* AI data 2 */}
-      <div className="flex flex-col md:flex-row items-start gap-2">
+      <div className="flex flex-col md:flex-row items-start gap-2 min-w-full">
         <div className="flex h-full w-full grow shrink-0 basis-0 flex-col items-start gap-4 rounded bg-neutral-50 p-6">
           <div className="flex w-full items-center gap-2">
             <IconWithBackground
